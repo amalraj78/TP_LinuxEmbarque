@@ -17,7 +17,12 @@ Taille occupée par l'image :
 
 ## 2. Modules Kernel
 
-### 2.0  Accès aux registres
+### 2.1  Accès aux registres
+
+mmap() vers registre GPIO :
+
+![image](https://github.com/user-attachments/assets/f3a63255-a588-49db-a36e-ea9aea82c7b3)
+
 
 2.3.1 : sudo apt install crossbuild-essential-armhf non fait
 
