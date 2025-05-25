@@ -115,4 +115,45 @@ Tous les modules fonctionnent très bien.
 ### 2.3.4 Chenillard
 
 Nous allons faire un programme dont on peut modifier le pattern dans le fichier /proc/ensea/chenille, et dont on peut choisir la vitesse du chenillard au chargement du module. Nous allons juste commencer par observer si nous pouvons modifier le fichier et entrer un paramètre.
+Voici le code :
+
+[module_chenillard.c](module_fpga/module_chenillard.c)
+
+Dans la fonction nous allons créer le chemin et le fichier, ensea/chenille et dans exit nous allons le supprimer.
+
+![image](https://github.com/user-attachments/assets/70a7cb8a-b58d-41d3-89cd-f9f3d6252bca)
+
+La fonction chenille_read va lire le message dans le fichier /proc/ensea/chenillard et l'afficher. La fonction chenille_write va écrire dans ce fichier, le pattern.
+
+![image](https://github.com/user-attachments/assets/eda18c21-e54f-485f-933d-a9ce114a6903)
+
+
+# 3.Device Tree
+
+Nous allons définir notre propre périphérique et programmer notre propre module qui identifie la présence du périphérique et se configure automatiquement à sa présence. Cet automatisme s'appuie sur le Device Tree. Pour cela nous modifier dans le fichier soc_system.dts, l'entrée ledr en remplaçant l'adresse par ensea. On compile ce fichier et on remplace ce nouveau fichier dans le mntboot.
+
+## 3.1 Module accèdant au LED via /dev
+On étudie le code gpio-leds.c : 
+
+* leds_probe : cette fonction est automatiquement appelée quand un périphérique compatible est trouvé. Elle va récupérer la ressource mémoire du périphérique. Elle va allouer une structure ensea_leds_dev pour stocker les infos et un pointeur. Elle va créer un fichier dans /dev/ensea_leds
+* leds_read : cette fonction récupère la structure ensea_leds_dev et va la copier vers l'utilisateur
+* leds_write : on écrit dans le fichier /dev/ensea_leds et on met à jour le registre matériel
+* leds_remove : cette fonction est appelée lors du retrait du périphérique et supprime le fichier /dev/ensea_leds
+
+## 3.2 Module final
+
+Réaliser un chenillard qui rempli les conditions suivantes :
+* Choix de la vitesse de balayage par une option au moment du chargement
+du module
+* Récupération de la vitesse courante par lecture du fichier /proc/ensea/speed
+* Modification de la patern par écriture dans le fichier /dev/ensea-led
+* Récupération du patern courant par lecture du fichier /dev/ensea-led
+* Modification du sens de balayage par écriture du fichier /proc/ensea/dir
+* Récupération du sens de balayage par lecture du fichier /proc/ensea/dir
+* Nous allons utiliser un timer pour le chenillard.
+
+Voici le code :
+
+[chenillard_final.c](chenillard_final.c)
+
 
