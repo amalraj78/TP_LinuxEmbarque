@@ -110,11 +110,9 @@ On va compiler les modules avec le nouveau ficher makefile, et nous allons teste
 [Makefile](module_fpga/Makefile)
 
 Hormis pour le module timer, les autres modules n'ont pas besoin de changement. 
+Tous les modules fonctionnent très bien.
 
+### 2.3.4 Chenillard
 
+Nous allons faire un programme dont on peut modifier le pattern dans le fichier /proc/ensea/chenille, et dont on peut choisir la vitesse du chenillard au chargement du module. Nous allons juste commencer par observer si nous pouvons modifier le fichier et entrer un paramètre.
 
-module_timer sur FPGA :
-![image](https://github.com/user-attachments/assets/61d65cda-1e5b-45ef-8a78-0e1a066ae794)
-
-
-faire les modules
