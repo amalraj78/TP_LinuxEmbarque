@@ -106,7 +106,10 @@ Ces 2 lignes permettent d'indiquer au make quel compilateur nous allons utiliser
 
 ### 2.3.3 Hello World
 
-On va compiler les modules avec le nouveau ficher makefile, et nous allons tester les modules
+On va compiler les modules avec le nouveau ficher makefile, et nous allons tester les modules sur la carte. Pour cela on crée un nouveau Makefile.
+[Makefile](module_fpga/Makefile)
+
+Hormis pour le module timer, les autres modules n'ont pas besoin de changement. 
 
 
 
