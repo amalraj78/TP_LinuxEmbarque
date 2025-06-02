@@ -1,6 +1,11 @@
 # TP_LinuxEmbarqué
 Dépôt TP Linux Embarqué 3DN
 
+## Binôme
+
+- [@amalraj78](https://www.github.com/amalraj78)
+- [@mariam-m95](https://www.github.com/mariam-m95)
+
 ### 1.3 Connexion au système
 Taille occupée par l'image : 
 
