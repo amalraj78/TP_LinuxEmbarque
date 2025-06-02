@@ -156,4 +156,10 @@ Voici le code :
 
 [chenillard_final.c](chenillard_final.c)
 
+Ce module permet de modifier : 
+* la vitesse via /proc/ensea/speed
+* la direction via /proc/ensea/dir
+* le pattern via /dev/ensea_leds
+
+On réutilise des fonctions du code précédent, comme leds_probe pour détecter un périphérique. Le timer permet d'écrire le pattern de façon périodique dans son fichier respectif, et de modifier le timer en lisant la vitesse (speed). leds_read/write permettent d'écrire et de lire le pattern. On a aussi d'autres fonctions pour lire et écrire la vitesse et la direction
 
