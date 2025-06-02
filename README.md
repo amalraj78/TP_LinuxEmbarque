@@ -163,3 +163,6 @@ Ce module permet de modifier :
 
 On réutilise des fonctions du code précédent, comme leds_probe pour détecter un périphérique. Le timer permet d'écrire le pattern de façon périodique dans son fichier respectif, et de modifier le timer en lisant la vitesse (speed). leds_read/write permettent d'écrire et de lire le pattern. On a aussi d'autres fonctions pour lire et écrire la vitesse et la direction
 
+# Conclusion
+
+Lors de ce TP, nous avons pu prendre en main la carte VEEK MT2S. Nous avons pu naviguer dans l'OS, dans ses fichiers sys, proc etc, qui contiennent de nombreuses informations sur le CPU, les périphériques, les mémoires et autres. Nous avons appliqué nos compétences en C et fait de la cross compilation. Nous avons pu aller encore plus loin en créant des modules noyaux, très performants. Nous n'avons pas pu tester le chenillard_final, mais nous avons réussi à effectuer toutes les autres manipulations.
